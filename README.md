@@ -1,4 +1,4 @@
 # book-listing
 Early Angular Exercise Practicing
--Sorting
--$http get request
+  -Sorting
+  -$http get request
