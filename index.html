@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MCR76</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="scripts/script.js"></script>
+    <!--
+        Early Angular Exersice Practicing:
+        -Sorting
+        -$http get request
+        -JSON Objects
+    -->
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+    <h1>Library Classics Book Listing</h1>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Title
+                    <span ng-click="sortBy='Title'" >&uarr;</span><span ng-click="sortBy='-Title'">&darr;</span>
+                </th>
+                <th>Author
+                    <span ng-click="sortBy='Author'" >&uarr;</span><span ng-click="sortBy='-Author'" >&darr;</span>
+                </th>
+                <th>Year
+                    <span ng-click="sortBy='Year'" >&uarr;</span><span ng-click="sortBy='-Year'" >&darr;</span>
+                </th>
+                <th>Type
+                    <span ng-click="sortBy='Type'" >&uarr;</span><span ng-click="sortBy='-Type'">&darr;</span>
+                </th>
+            </tr>
+            <tr ng-repet ng-repeat="arrayEl in myBooks | orderBy:sortBy">
+                <td>{{arrayEl.Title}}</td>
+                <td>{{arrayEl.Author}}</td>
+                <td>{{arrayEl.Year}}</td>
+                <td>{{arrayEl.Type}}</td>
+            </tr>
+        </table>
+    </div>
+    <!--
+    <h1>My Book Listing</h1>
+    <ul>
+        <li ng-repeat="arrayEl in myBooks">{{arrayEl.Title}}</li>
+    </ul>
+    -->
+</div>
+
+</body>
+</html>
